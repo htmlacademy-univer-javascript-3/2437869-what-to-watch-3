@@ -2,8 +2,8 @@ import Footer from '../../components/Footer/footer';
 import Logo from '../../components/logo/logo';
 import FilmCard from '../../components/FilmCard/filmCard.tsx';
 import { myListInfo } from './myListInfo.ts';
+import {FILMCOUNT} from '../../components/App/const.ts';
 
-export const FILMCOUNT = 9;
 
 function MyList(){
   return (
