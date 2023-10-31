@@ -5,7 +5,7 @@ import Genre from '../../components/Genres/genre';
 import {genresInfo} from './genresInfo.ts';
 import {MainProps} from './mainProps.tsx';
 import Footer from '../../components/Footer/footer.tsx';
-import {FILMCOUNT} from '../MyList/myList.tsx';
+import {FILMCOUNT} from '../../components/App/const.ts';
 
 function Main(props : MainProps):JSX.Element {
   return (

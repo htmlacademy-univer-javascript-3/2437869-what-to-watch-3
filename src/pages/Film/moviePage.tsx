@@ -1,6 +1,6 @@
 import Footer from '../../components/Footer/footer.tsx';
 import Logo from '../../components/logo/logo.tsx';
-import {FILMCOUNT} from '../MyList/myList.tsx';
+import {FILMCOUNT} from '../../components/App/const.ts';
 
 function MoviePage() {
   return (
