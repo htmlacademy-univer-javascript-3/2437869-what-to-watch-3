@@ -1,5 +1,6 @@
 export type FilmCardProps = {
-    imagePath: string;
+    id: number;
+    src: string;
     title: string;
     genre?: string;
     releaseYear?: number;

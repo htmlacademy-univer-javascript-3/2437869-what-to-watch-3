@@ -1,4 +1,4 @@
-import {GenreProps} from '../../components/Genres/genreProps.tsx';
+import {GenreProps} from '../components/Genres/genreProps.tsx';
 
 export const genresInfo : GenreProps[] = [
   {

@@ -3,16 +3,17 @@ import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import {AppRoute, AuthorizationStatus} from './const.ts';
 import {HelmetProvider} from 'react-helmet-async';
 
-import {MainProps} from '../../pages/MainPage/mainProps.tsx';
+import {AppProps} from '../../pages/MainPage/appProps.tsx';
 import MyList from '../../pages/MyList/myList.tsx';
-import MoviePage from '../../pages/Film/moviePage.tsx';
+import FilmPage from '../../pages/Film/filmPage.tsx';
 import SignIn from '../../pages/SignIn/signIn.tsx';
 import AddReview from '../../pages/AddReview/addReview.tsx';
 import Player from '../../pages/Player/player.tsx';
 import NotFoundScreen from '../../pages/NotFound/notFoundScreen.tsx';
 import PrivateRoute from '../PrivateRoute/privateRoute.tsx';
+import {myListInfo} from '../../mocks/myListInfo.ts';
 
-function App(props: MainProps) {
+function App(props: AppProps) {
   return (
     <HelmetProvider>
       <BrowserRouter>
@@ -25,27 +26,27 @@ function App(props: MainProps) {
             path={AppRoute.MyList}
             element={
               <PrivateRoute
-                authorizationStatus={AuthorizationStatus.NoAuth}
+                authorizationStatus={AuthorizationStatus.Auth}
               >
-                <MyList/>
+                <MyList films={myListInfo}/>
               </PrivateRoute>
             }
           />
           <Route
-            path={AppRoute.Film}
-            element={<MoviePage/>}
+            path={AppRoute.Film()}
+            element={<FilmPage/>}
           />
           <Route
             path={AppRoute.SignIn}
             element={<SignIn/>}
           />
           <Route
-            path={AppRoute.AddReview}
-            element={<AddReview/>}
+            path={AppRoute.AddReview()}
+            element={<AddReview {...props.review}/>}
           />
           <Route
-            path={AppRoute.Player}
-            element={<Player/>}
+            path={AppRoute.Player()}
+            element={<Player {...props.player}/>}
           />
           <Route
             path={'*'}
