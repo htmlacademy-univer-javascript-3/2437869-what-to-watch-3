@@ -1,13 +1,13 @@
-import FilmCard from '../../components/FilmCard/filmCard.tsx';
 import Logo from '../../components/logo/logo.tsx';
-import {filmsInfo} from './filmsInfo.ts';
+import {filmsInfo} from '../../mocks/films.ts';
 import Genre from '../../components/Genres/genre';
-import {genresInfo} from './genresInfo.ts';
-import {MainProps} from './mainProps.tsx';
+import {genresInfo} from '../../mocks/genresInfo.ts';
+import {AppProps} from './appProps.tsx';
 import Footer from '../../components/Footer/footer.tsx';
-import {FILMCOUNT} from '../../components/App/const.ts';
+import {MAXDISPLAYEDFILMS} from '../../components/App/const.ts';
+import FilmList from '../../components/FilmList/filmList.tsx';
 
-function Main(props : MainProps):JSX.Element {
+function Main(props : AppProps):JSX.Element {
   return (
     <>
       <section className="film-card">
@@ -59,7 +59,7 @@ function Main(props : MainProps):JSX.Element {
                     <use xlinkHref="#add"></use>
                   </svg>
                   <span>My list</span>
-                  <span className="film-card__count">{FILMCOUNT}</span>
+                  <span className="film-card__count">{MAXDISPLAYEDFILMS}</span>
                 </button>
               </div>
             </div>
@@ -75,9 +75,7 @@ function Main(props : MainProps):JSX.Element {
             {genresInfo.map((genre) => <Genre name={genre.name} key={genre.name} />)}
           </ul>
 
-          <div className="catalog__films-list">
-            {filmsInfo.map((film) => <FilmCard title={film.title} imagePath={film.imagePath} key={film.title} />)}
-          </div>
+          <FilmList films={filmsInfo}/>
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>

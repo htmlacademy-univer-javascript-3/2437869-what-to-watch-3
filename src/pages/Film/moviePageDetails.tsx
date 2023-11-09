@@ -1,6 +1,6 @@
 import Footer from '../../components/Footer/footer.tsx';
 import Logo from '../../components/logo/logo.tsx';
-import {filmsInfo} from '../MainPage/filmsInfo.ts';
+import {filmsInfo} from '../../mocks/films.ts';
 import FilmCard from '../../components/FilmCard/filmCard.tsx';
 
 function MoviePageDetails(): JSX.Element {
@@ -130,7 +130,7 @@ function MoviePageDetails(): JSX.Element {
           <h2 className="catalog__title">More like this</h2>
 
           <div className="catalog__films-list">
-            {filmsInfo.map((film) => <FilmCard title={film.title} imagePath={film.imagePath} key={film.title} />)}
+            {filmsInfo.map((film) => <FilmCard title={film.title} src={film.src} key={film.title} id={film.id}/>)}
           </div>
         </section>
 

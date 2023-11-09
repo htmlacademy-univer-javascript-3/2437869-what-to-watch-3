@@ -1,7 +1,12 @@
-function Player() : JSX.Element {
+export type PlayerProps = {
+  video: string;
+  poster: string;
+}
+
+function Player({video, poster}: PlayerProps) : JSX.Element {
   return (
     <div className="player">
-      <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+      <video src={video} className="player__video" poster={poster}></video>
 
       <button type="button" className="player__exit">Exit</button>
 

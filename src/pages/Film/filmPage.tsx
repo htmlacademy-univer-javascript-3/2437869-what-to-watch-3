@@ -1,8 +1,9 @@
 import Footer from '../../components/Footer/footer.tsx';
 import Logo from '../../components/logo/logo.tsx';
-import {FILMCOUNT} from '../../components/App/const.ts';
+import {AppRoute, MAXDISPLAYEDFILMS} from '../../components/App/const.ts';
+import {Link} from 'react-router-dom';
 
-function MoviePage() {
+function FilmPage() {
   return (
     <>
       <section className="film-card film-card--full">
@@ -48,9 +49,9 @@ function MoviePage() {
                     <use xlinkHref="#add"></use>
                   </svg>
                   <span>My list</span>
-                  <span className="film-card__count">{FILMCOUNT}</span>
+                  <span className="film-card__count">{MAXDISPLAYEDFILMS}</span>
                 </button>
-                <a href="add-review.html" className="btn film-card__button">Add review</a>
+                <Link to={AppRoute.AddReview()} className="btn film-card__button">Add review</Link>
               </div>
             </div>
           </div>
@@ -164,4 +165,4 @@ function MoviePage() {
   );
 }
 
-export default MoviePage;
+export default FilmPage;

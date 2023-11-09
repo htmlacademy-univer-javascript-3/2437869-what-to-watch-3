@@ -1,17 +1,17 @@
 import Footer from '../../components/Footer/footer';
 import Logo from '../../components/logo/logo';
 import FilmCard from '../../components/FilmCard/filmCard.tsx';
-import { myListInfo } from './myListInfo.ts';
-import {FILMCOUNT} from '../../components/App/const.ts';
+import {MAXDISPLAYEDFILMS} from '../../components/App/const.ts';
+import {FilmCardListProps} from '../../components/FilmList/filmList.tsx';
 
 
-function MyList(){
+function MyList({ films }: FilmCardListProps){
   return (
     <div className="user-page">
       <header className="page-header user-page__head">
         <Logo />
 
-        <h1 className="page-title user-page__title">My list <span className="user-page__film-count">{FILMCOUNT}</span></h1>
+        <h1 className="page-title user-page__title">My list <span className="user-page__film-count">{MAXDISPLAYEDFILMS}</span></h1>
         <ul className="user-block">
           <li className="user-block__item">
             <div className="user-block__avatar">
@@ -28,7 +28,7 @@ function MyList(){
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
         <div className="catalog__films-list">
-          {myListInfo.map((film) => <FilmCard title={film.title} imagePath={film.imagePath} key={film.title} />)}
+          {films.map((film) => <FilmCard {...film} key={film.title}/>)}
         </div>
       </section>
 
