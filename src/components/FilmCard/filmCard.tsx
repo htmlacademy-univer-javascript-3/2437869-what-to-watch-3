@@ -2,15 +2,10 @@ import {FilmCardProps} from './filmCardProps.tsx';
 import {useState} from 'react';
 import {AppRoute} from '../App/const.ts';
 import {Link} from 'react-router-dom';
+import {VideoPlayer} from '../VideoPlayer/videoPlayer.tsx';
 
-
-const style = {
-  width: '280',
-  height: '175',
-};
-
-function FilmCard({id, src, title}: FilmCardProps): JSX.Element {
-  const [, setIsHovered] = useState(false);
+function FilmCard({id, src, title, videoSrc}: FilmCardProps): JSX.Element {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <article onMouseEnter={() => {
       setIsHovered(true);
@@ -19,7 +14,7 @@ function FilmCard({id, src, title}: FilmCardProps): JSX.Element {
     }} className="small-film-card catalog__films-card"
     >
       <div className="small-film-card__image">
-        <img src={src} alt={title} style={style}/>
+        <VideoPlayer videoSrc={videoSrc} imgSrc={src} isHovered={isHovered} />
       </div>
       <h3 className="small-film-card__title">
         <Link className="small-film-card__link" to={AppRoute.Film(id)}>{title}</Link>

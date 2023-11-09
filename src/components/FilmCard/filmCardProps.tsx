@@ -4,4 +4,5 @@ export type FilmCardProps = {
     title: string;
     genre?: string;
     releaseYear?: number;
+    videoSrc: string;
 }

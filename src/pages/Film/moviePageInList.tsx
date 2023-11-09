@@ -105,7 +105,7 @@ function MoviePageInList() : JSX.Element {
           <h2 className="catalog__title">More like this</h2>
 
           <div className="catalog__films-list">
-            {filmsInfo.map((film) => <FilmCard title={film.title} src={film.src} id={film.id} key={film.id}/>)}
+            {filmsInfo.map((film) => <FilmCard {...film} key={film.title} />)}
           </div>
         </section>
 
