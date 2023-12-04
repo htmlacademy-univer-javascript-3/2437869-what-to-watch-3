@@ -1,5 +1,5 @@
 import Footer from '../../components/Footer/footer.tsx';
-import Logo from '../../components/logo/logo.tsx';
+import Logo from '../../components/Logo/logo.tsx';
 
 function SignInMessage() {
   return (

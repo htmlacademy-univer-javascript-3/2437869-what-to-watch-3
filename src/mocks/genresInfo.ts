@@ -2,33 +2,33 @@ import {GenreProps} from '../components/Genres/genreProps.tsx';
 
 export const genresInfo : GenreProps[] = [
   {
-    name: 'AllGenres',
+    title: 'All Genres',
   },
   {
-    name: 'Comdeies'
+    title: 'Comedies'
   },
   {
-    name: 'Crime'
+    title: 'Crime'
   },
   {
-    name: 'Documentary'
+    title: 'Documentary'
   },
   {
-    name: 'Dramas'
+    title: 'Dramas'
   },
   {
-    name: 'Horror'
+    title: 'Horror'
   },
   {
-    name: 'Kids & Family'
+    title: 'Kids & Family'
   },
   {
-    name: 'Romance'
+    title: 'Romance'
   },
   {
-    name: 'Sci-Fi'
+    title: 'Sci-Fi'
   },
   {
-    name: 'Thrillers'
+    title: 'Thrillers'
   },
 ];

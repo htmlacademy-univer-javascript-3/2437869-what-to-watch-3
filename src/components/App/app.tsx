@@ -33,19 +33,19 @@ function App(props: AppProps) {
             }
           />
           <Route
-            path={AppRoute.Film()}
-            element={<FilmPage/>}
+            path={AppRoute.Film}
+            element={<FilmPage {...props}/>}
           />
           <Route
             path={AppRoute.SignIn}
             element={<SignIn/>}
           />
           <Route
-            path={AppRoute.AddReview()}
+            path={AppRoute.AddReview}
             element={<AddReview {...props.review}/>}
           />
           <Route
-            path={AppRoute.Player()}
+            path={AppRoute.Player}
             element={<Player {...props.player}/>}
           />
           <Route
