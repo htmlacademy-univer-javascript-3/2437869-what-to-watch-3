@@ -1,11 +1,11 @@
-export const AppRoute = {
-  SignIn: '/login',
-  MyList: '/mylist',
-  Main: '/',
-  Film: (id?: number) => `/films/${id || ':id'}`,
-  Player: (id?: number) => `/player/${id || ':id'}`,
-  AddReview: (id?: number) => `/films/${id || ':id'}/review`,
-};
+export enum AppRoute {
+  Main = '/',
+  SignIn = '/login',
+  MyList = '/mylist',
+  Film = '/films/:id',
+  AddReview = '/films/:id/review',
+  Player = '/player/:id'
+}
 
 export enum AuthorizationStatus {
   Auth = 'AUTH',
@@ -13,5 +13,5 @@ export enum AuthorizationStatus {
   Unknown = 'UNKNOWN',
 }
 
-export const MAXDISPLAYEDFILMS = 8;
+export const MAXDISPLAYEDFILMS = 9;
 export const STARCOUNT = 10;

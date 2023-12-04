@@ -2,10 +2,10 @@ import {GenreProps} from '../components/Genres/genreProps.tsx';
 
 export const genresInfo : GenreProps[] = [
   {
-    name: 'AllGenres',
+    name: 'All Genres',
   },
   {
-    name: 'Comdeies'
+    name: 'Comedies'
   },
   {
     name: 'Crime'

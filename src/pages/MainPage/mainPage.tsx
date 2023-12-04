@@ -1,4 +1,4 @@
-import Logo from '../../components/logo/logo.tsx';
+import Logo from '../../components/Logo/logo.tsx';
 import {filmsInfo} from '../../mocks/films.ts';
 import Genre from '../../components/Genres/genre';
 import {genresInfo} from '../../mocks/genresInfo.ts';

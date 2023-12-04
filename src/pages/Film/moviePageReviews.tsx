@@ -1,5 +1,5 @@
 import Footer from '../../components/Footer/footer';
-import Logo from '../../components/logo/logo.tsx';
+import Logo from '../../components/Logo/logo.tsx';
 import {filmsInfo} from '../../mocks/films.ts';
 import FilmCard from '../../components/FilmCard/filmCard.tsx';
 

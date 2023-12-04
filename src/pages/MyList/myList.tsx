@@ -1,5 +1,5 @@
 import Footer from '../../components/Footer/footer';
-import Logo from '../../components/logo/logo';
+import Logo from '../../components/Logo/logo';
 import FilmCard from '../../components/FilmCard/filmCard.tsx';
 import {MAXDISPLAYEDFILMS} from '../../components/App/const.ts';
 import {FilmCardListProps} from '../../components/FilmList/filmList.tsx';

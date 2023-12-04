@@ -1,0 +1,24 @@
+.user-block__image-item {
+  width: 63px;
+  height: 63px;
+}
+
+.btn--play__icon-item {
+  width: 19px;
+  height: 19px;
+}
+
+.btn--list__icon-item {
+  width: 19px;
+  height: 20px;
+}
+
+.film-card__poster--image-item {
+  width: 218px;
+  height: 327px;
+}
+
+.small-film-card__image-item {
+  width: 280px;
+  height: 175px;
+}

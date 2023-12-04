@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './components/App/app.tsx';
 import {filmsInfo} from './mocks/films.ts';
 import {player} from './mocks/player.ts';
-import {review} from './mocks/review.ts';
+import {reviewsList} from './mocks/reviewsList.ts';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,7 +17,7 @@ root.render(
       releaseYear={2014}
       films={filmsInfo}
       player={player}
-      review={review}
+      review={reviewsList}
     />
   </React.StrictMode>
 );

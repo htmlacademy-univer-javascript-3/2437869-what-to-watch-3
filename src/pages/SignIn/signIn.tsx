@@ -1,4 +1,4 @@
-import Logo from '../../components/logo/logo';
+import Logo from '../../components/Logo/logo';
 import Footer from '../../components/Footer/footer.tsx';
 
 function SignIn () {

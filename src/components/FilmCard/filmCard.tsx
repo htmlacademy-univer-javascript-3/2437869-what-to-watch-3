@@ -4,7 +4,7 @@ import {AppRoute} from '../App/const.ts';
 import {Link} from 'react-router-dom';
 import {VideoPlayer} from '../VideoPlayer/videoPlayer.tsx';
 
-function FilmCard({id, src, title, videoSrc}: FilmCardProps): JSX.Element {
+function FilmCard(props: FilmCardProps): JSX.Element {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <article onMouseEnter={() => {
@@ -14,10 +14,10 @@ function FilmCard({id, src, title, videoSrc}: FilmCardProps): JSX.Element {
     }} className="small-film-card catalog__films-card"
     >
       <div className="small-film-card__image">
-        <VideoPlayer videoSrc={videoSrc} imgSrc={src} isHovered={isHovered} />
+        <VideoPlayer videoSrc={props.srcPreviewVideo} imgSrc={props.srcPoster} isHovered={isHovered} />
       </div>
       <h3 className="small-film-card__title">
-        <Link className="small-film-card__link" to={AppRoute.Film(id)}>{title}</Link>
+        <Link className="small-film-card__link" to={AppRoute.Film}>{props.title}</Link>
       </h3>
     </article>
   );

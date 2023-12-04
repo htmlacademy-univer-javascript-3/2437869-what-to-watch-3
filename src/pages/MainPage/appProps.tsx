@@ -1,6 +1,6 @@
 import {FilmCardProps} from '../../components/FilmCard/filmCardProps.tsx';
-import {AddReviewProps} from '../AddReview/addReview.tsx';
 import {PlayerProps} from '../Player/player.tsx';
+import {Review} from '../../components/Tabs/Reviews/reviewProps.ts';
 
 
 export type AppProps = {
@@ -8,6 +8,6 @@ export type AppProps = {
     genre: string;
     releaseYear: number;
     films: FilmCardProps[];
-    review: AddReviewProps;
+    review: Review[];
     player: PlayerProps;
 };
