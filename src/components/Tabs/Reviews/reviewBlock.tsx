@@ -15,7 +15,7 @@ function ReviewBlock({ review }: ReviewBlockProps): JSX.Element {
       <blockquote className="review__quote">
         <p className="review__text">{review.text}</p>
         <footer className="review__details">
-          <cite className="review__author">{review.user}</cite>
+          <cite className="review__author">{review.author}</cite>
           <time className="review__date" dateTime={review.date}>
             {convertDate(review.date)}
           </time>
