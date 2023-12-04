@@ -42,7 +42,7 @@ function App(props: AppProps) {
           />
           <Route
             path={AppRoute.AddReview}
-            element={<AddReview {...props.review}/>}
+            element={<AddReview {...props}/>}
           />
           <Route
             path={AppRoute.Player}
