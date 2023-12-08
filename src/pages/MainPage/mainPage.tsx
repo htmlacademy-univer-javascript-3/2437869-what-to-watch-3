@@ -5,9 +5,11 @@ import Footer from '../../components/Footer/footer.tsx';
 import {MAXDISPLAYEDFILMS} from '../../components/App/const.ts';
 import FilmList from '../../components/FilmList/filmList.tsx';
 import {useAppSelector} from '../../hooks';
+import ShowMore from '../../components/ShowMore/showMore.tsx';
 
 function Main(props: AppProps): JSX.Element {
   const filmsGenre = useAppSelector((state) => state.films);
+  const cardsCount = useAppSelector((state) => state.cardsCount);
   return (
     <>
       <section className="film-card">
@@ -74,12 +76,9 @@ function Main(props: AppProps): JSX.Element {
           <GenreList/>
 
           <div className="catalog__films-list">
-            <FilmList films={filmsGenre} />
+            <FilmList films={filmsGenre.slice(0, cardsCount)} />
           </div>
-
-          <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
-          </div>
+          {cardsCount !== filmsGenre.length && <ShowMore/>}
         </section>
 
         <Footer/>

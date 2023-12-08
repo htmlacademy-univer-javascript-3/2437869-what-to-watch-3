@@ -1,11 +1,12 @@
 import {createReducer} from '@reduxjs/toolkit';
 import {Genres} from '../mocks/genresInfo.ts';
 import {films} from '../mocks/films.ts';
-import {changeGenre, getGenreFilms} from './actions.ts';
+import {changeGenre, getGenreFilms, setCardsCount} from './actions.ts';
 
 export const initialState = {
   genre: Genres.All,
   films: films,
+  cardsCount: 8,
 };
 
 const reducer = createReducer(initialState, (builder) => {
@@ -22,6 +23,10 @@ const reducer = createReducer(initialState, (builder) => {
           state.films = films.filter((film) => film.genre === state.genre);
           break;
       }
+    })
+    .addCase(setCardsCount, (state) => {
+      const currentFilmsCount = state.films.length;
+      state.cardsCount = (state.cardsCount + 8 > currentFilmsCount) ? currentFilmsCount : state.cardsCount + 8;
     });
 });
 
