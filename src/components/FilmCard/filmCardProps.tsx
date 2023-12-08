@@ -1,7 +1,9 @@
+import {Genres} from '../../mocks/genresInfo.ts';
+
 export type FilmCardProps = {
   id: number;
   title: string;
-  genre: string;
+  genre: Genres;
   released: number;
   srcPoster: string;
   rating: number;

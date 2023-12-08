@@ -1,13 +1,13 @@
 import Logo from '../../components/Logo/logo.tsx';
-import {filmsInfo} from '../../mocks/films.ts';
-import Genre from '../../components/Genres/genre';
-import {genresInfo} from '../../mocks/genresInfo.ts';
+import GenreList from '../../components/Genres/genreList.tsx';
 import {AppProps} from './appProps.tsx';
 import Footer from '../../components/Footer/footer.tsx';
 import {MAXDISPLAYEDFILMS} from '../../components/App/const.ts';
 import FilmList from '../../components/FilmList/filmList.tsx';
+import {useAppSelector} from '../../hooks';
 
-function Main(props : AppProps):JSX.Element {
+function Main(props: AppProps): JSX.Element {
+  const filmsGenre = useAppSelector((state) => state.films);
   return (
     <>
       <section className="film-card">
@@ -18,7 +18,7 @@ function Main(props : AppProps):JSX.Element {
         <h1 className="visually-hidden">WTW</h1>
 
         <header className="page-header film-card__head">
-          <Logo />
+          <Logo/>
 
           <ul className="user-block">
             <li className="user-block__item">
@@ -71,18 +71,18 @@ function Main(props : AppProps):JSX.Element {
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-          <ul className="catalog__genres-list">
-            {genresInfo.map((genre) => <Genre name={genre.name} key={genre.name} />)}
-          </ul>
+          <GenreList/>
 
-          <FilmList films={filmsInfo}/>
+          <div className="catalog__films-list">
+            <FilmList films={filmsGenre} />
+          </div>
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
           </div>
         </section>
 
-        <Footer />
+        <Footer/>
       </div>
 
 

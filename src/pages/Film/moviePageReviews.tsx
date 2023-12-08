@@ -1,6 +1,6 @@
 import Footer from '../../components/Footer/footer';
 import Logo from '../../components/Logo/logo.tsx';
-import {filmsInfo} from '../../mocks/films.ts';
+import {films} from '../../mocks/films.ts';
 import FilmCard from '../../components/FilmCard/filmCard.tsx';
 
 function MoviePageReviews() : JSX.Element {
@@ -170,7 +170,7 @@ function MoviePageReviews() : JSX.Element {
           <h2 className="catalog__title">More like this</h2>
 
           <div className="catalog__films-list">
-            {filmsInfo.map((film) => <FilmCard {...film} key={film.title} />)}
+            {films.map((film) => <FilmCard {...film} key={film.title} />)}
           </div>
         </section>
 
