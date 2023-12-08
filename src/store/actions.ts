@@ -7,3 +7,5 @@ export const changeGenre = createAction(
   (genre: Genres) => ({payload: genre}));
 
 export const getGenreFilms = createAction('main/getGenreFilms');
+
+export const setCardsCount = createAction('main/setFilmCardCount');
