@@ -1,5 +1,5 @@
 import {FilmCardProps} from '../components/FilmCard/filmCardProps.tsx';
-import {filmsInfo} from './films.ts';
+import {films} from './films.ts';
 
 
-export const myListInfo: FilmCardProps[] = filmsInfo;
+export const myListInfo: FilmCardProps[] = films;

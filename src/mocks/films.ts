@@ -1,10 +1,11 @@
 import {FilmCardProps} from '../components/FilmCard/filmCardProps.tsx';
+import {Genres} from './genresInfo.ts';
 
-export const filmsInfo: FilmCardProps[] = [
+export const films: FilmCardProps[] = [
   {
     id: 0,
     title: 'The Grand Budapest Hotel',
-    genre: 'Drama',
+    genre: Genres.Drama,
     released: 2014,
     srcPoster: 'img/the-grand-budapest-hotel-poster.jpg',
     rating: 8.9,
@@ -31,7 +32,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 1,
     title: 'Fantastic Beasts: The Crimes of Grindelwald',
-    genre: 'Fantasy',
+    genre: Genres.Fantasy,
     released: 2018,
     srcPoster: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
     rating: 9,
@@ -45,7 +46,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 2,
     title: 'Bohemian Rhapsody',
-    genre: 'Biography',
+    genre: Genres.Biography,
     released: 2018,
     srcPoster: 'img/bohemian-rhapsody.jpg',
     rating: 9,
@@ -59,7 +60,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 3,
     title: 'Macbeth',
-    genre: 'Drama',
+    genre: Genres.Drama,
     released: 2015,
     srcPoster: 'img/macbeth.jpg',
     rating: 9,
@@ -73,7 +74,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 4,
     title: 'Aviator',
-    genre: 'Drama',
+    genre: Genres.Drama,
     released: 2004,
     srcPoster: 'img/aviator.jpg',
     rating: 9,
@@ -87,7 +88,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 5,
     title: 'We need to talk about Kevin',
-    genre: 'Thriller',
+    genre: Genres.Thriller,
     released: 2011,
     srcPoster: 'img/we-need-to-talk-about-kevin.jpg',
     rating: 9,
@@ -101,7 +102,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 6,
     title: 'What We Do in the Shadows',
-    genre: 'Comedy',
+    genre: Genres.Comedy,
     released: 2014,
     srcPoster: 'img/what-we-do-in-the-shadows.jpg',
     rating: 9,
@@ -115,7 +116,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 7,
     title: 'Revenant',
-    genre: 'Adventure',
+    genre: Genres.Adventure,
     released: 2015,
     srcPoster: 'img/revenant.jpg',
     rating: 9,
@@ -129,7 +130,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 8,
     title: 'Johnny English',
-    genre: 'Comedy',
+    genre: Genres.Comedy,
     released: 2003,
     srcPoster: 'img/johnny-english.jpg',
     rating: 9,
@@ -143,7 +144,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 9,
     title: 'Shutter Island',
-    genre: 'Thriller',
+    genre: Genres.Thriller,
     released: 2010,
     srcPoster: 'img/shutter-island.jpg',
     rating: 9,
@@ -157,7 +158,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 10,
     title: 'Pulp Fiction',
-    genre: 'Thriller',
+    genre: Genres.Thriller,
     released: 1994,
     srcPoster: 'img/pulp-fiction.jpg',
     rating: 9,
@@ -171,7 +172,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 11,
     title: 'No Country for Old Men',
-    genre: 'Thriller',
+    genre: Genres.Thriller,
     released: 2007,
     srcPoster: 'img/no-country-for-old-men.jpg',
     rating: 9,
@@ -185,7 +186,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 12,
     title: 'Snatch',
-    genre: 'Comedy',
+    genre: Genres.Comedy,
     released: 2000,
     srcPoster: 'img/snatch.jpg',
     rating: 9,
@@ -199,7 +200,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 13,
     title: 'Moonrise Kingdom',
-    genre: 'Comedy',
+    genre: Genres.Comedy,
     released: 2012,
     srcPoster: 'img/moonrise-kingdom.jpg',
     rating: 9,
@@ -213,7 +214,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 14,
     title: 'Seven Years in Tibet',
-    genre: 'Adventure',
+    genre: Genres.Adventure,
     released: 1997,
     srcPoster: 'img/seven-years-in-tibet.jpg',
     rating: 9,
@@ -227,7 +228,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 15,
     title: 'Midnight Special',
-    genre: 'Adventure',
+    genre: Genres.Adventure,
     released: 2016,
     srcPoster: 'img/midnight-special.jpg',
     rating: 9,
@@ -241,7 +242,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 16,
     title: 'War of the Worlds',
-    genre: 'Adventure',
+    genre: Genres.Adventure,
     released: 2005,
     srcPoster: 'img/war-of-the-worlds.jpg',
     rating: 9,
@@ -255,7 +256,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 17,
     title: 'Dardjeeling Limited',
-    genre: 'Adventure',
+    genre: Genres.Adventure,
     released: 2007,
     srcPoster: 'img/dardjeeling-limited.jpg',
     rating: 9,
@@ -269,7 +270,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 18,
     title: 'Orlando',
-    genre: 'Drama',
+    genre: Genres.Drama,
     released: 1992,
     srcPoster: 'img/orlando.jpg',
     rating: 9,
@@ -283,7 +284,7 @@ export const filmsInfo: FilmCardProps[] = [
   {
     id: 19,
     title: 'Mindhunter',
-    genre: 'Thriller',
+    genre: Genres.Thriller,
     released: 2017,
     srcPoster: 'img/mindhunter.jpg',
     rating: 9,

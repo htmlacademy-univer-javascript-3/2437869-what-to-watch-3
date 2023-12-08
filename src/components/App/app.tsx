@@ -2,7 +2,6 @@ import Main from '../../pages/MainPage/mainPage.tsx';
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import {AppRoute, AuthorizationStatus} from './const.ts';
 import {HelmetProvider} from 'react-helmet-async';
-
 import {AppProps} from '../../pages/MainPage/appProps.tsx';
 import MyList from '../../pages/MyList/myList.tsx';
 import FilmPage from '../../pages/Film/filmPage.tsx';
@@ -55,7 +54,6 @@ function App(props: AppProps) {
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
-
   );
 }
 
