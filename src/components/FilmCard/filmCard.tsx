@@ -14,10 +14,10 @@ function FilmCard(props: FilmCardProps): JSX.Element {
     }} className="small-film-card catalog__films-card"
     >
       <div className="small-film-card__image">
-        <VideoPlayer videoSrc={props.srcPreviewVideo} imgSrc={props.srcPoster} isHovered={isHovered} />
+        <VideoPlayer videoSrc={props.previewVideoLink} imgSrc={props.previewImage} isHovered={isHovered} />
       </div>
       <h3 className="small-film-card__title">
-        <Link className="small-film-card__link" to={AppRoute.Film}>{props.title}</Link>
+        <Link className="small-film-card__link" to={AppRoute.Film}>{props.name}</Link>
       </h3>
     </article>
   );

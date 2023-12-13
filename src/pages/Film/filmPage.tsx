@@ -29,8 +29,8 @@ function FilmPage({ films }: FilmPageProps): JSX.Element {
         <div className="film-card__hero">
           <div className="film-card__bg">
             <img
-              src={currentFilm?.bgImage}
-              alt={currentFilm?.title}
+              src={currentFilm?.backgroundImage}
+              alt={currentFilm?.name}
             />
           </div>
           <h1 className="visually-hidden">WTW</h1>
@@ -53,7 +53,7 @@ function FilmPage({ films }: FilmPageProps): JSX.Element {
           </header>
           <div className="film-card__wrap">
             <div className="film-card__desc">
-              <h2 className="film-card__title">{currentFilm.title}</h2>
+              <h2 className="film-card__title">{currentFilm.name}</h2>
               <p className="film-card__meta">
                 <span className="film-card__genre">{currentFilm.genre}</span>
                 <span className="film-card__year">{currentFilm.released}</span>
@@ -84,8 +84,8 @@ function FilmPage({ films }: FilmPageProps): JSX.Element {
             <div className="film-card__poster film-card__poster--big">
               <img
                 className="film-card__poster--image-item"
-                src={currentFilm.srcPoster}
-                alt={`${currentFilm.title} poster`}
+                src={currentFilm.previewImage}
+                alt={`${currentFilm.name} poster`}
               />
             </div>
             <FilmTabs films={films}/>

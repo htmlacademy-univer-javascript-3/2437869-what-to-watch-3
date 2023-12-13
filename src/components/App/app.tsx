@@ -10,16 +10,22 @@ import AddReview from '../../pages/AddReview/addReview.tsx';
 import Player from '../../pages/Player/player.tsx';
 import NotFoundScreen from '../../pages/NotFound/notFoundScreen.tsx';
 import PrivateRoute from '../PrivateRoute/privateRoute.tsx';
-import {myListInfo} from '../../mocks/myListInfo.ts';
+import {useAppSelector} from '../../hooks';
+import Spinner from '../Spinner/spinner.tsx';
 
 function App(props: AppProps) {
+  const films = useAppSelector((state)=> state.filteredFilms);
+  const isLoading = useAppSelector((state) => state.dataIsLoading);
+  if (isLoading) {
+    return <Spinner />;
+  }
   return (
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route
             path={AppRoute.Main}
-            element={<Main {...props} />}
+            element={<Main />}
           />
           <Route
             path={AppRoute.MyList}
@@ -27,13 +33,13 @@ function App(props: AppProps) {
               <PrivateRoute
                 authorizationStatus={AuthorizationStatus.Auth}
               >
-                <MyList films={myListInfo}/>
+                <MyList {...props} films={films}/>
               </PrivateRoute>
             }
           />
           <Route
             path={AppRoute.Film}
-            element={<FilmPage {...props}/>}
+            element={<FilmPage {...props} films={films}/>}
           />
           <Route
             path={AppRoute.SignIn}
@@ -41,7 +47,7 @@ function App(props: AppProps) {
           />
           <Route
             path={AppRoute.AddReview}
-            element={<AddReview {...props}/>}
+            element={<AddReview {...props} films={films}/>}
           />
           <Route
             path={AppRoute.Player}
