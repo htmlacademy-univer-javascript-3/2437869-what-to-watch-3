@@ -28,7 +28,7 @@ function MyList({ films }: FilmCardListProps){
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
         <div className="catalog__films-list">
-          {films.map((film) => <FilmCard {...film} key={film.title}/>)}
+          {films.map((film) => <FilmCard {...film} key={film.name}/>)}
         </div>
       </section>
 

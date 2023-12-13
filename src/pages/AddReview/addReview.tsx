@@ -25,8 +25,8 @@ function AddReviewPage({ films }: AddReviewPageProps): JSX.Element {
       <div className="film-card__header">
         <div className="film-card__bg">
           <img
-            src={currentFilm.bgImage}
-            alt={currentFilm.title}
+            src={currentFilm.backgroundImage}
+            alt={currentFilm.name}
           />
         </div>
         <h1 className="visually-hidden">WTW</h1>
@@ -36,7 +36,7 @@ function AddReviewPage({ films }: AddReviewPageProps): JSX.Element {
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
                 <Link to={`/films/${currentFilm.id}`} className="breadcrumbs__link">
-                  {currentFilm.title}
+                  {currentFilm.name}
                 </Link>
               </li>
               <li className="breadcrumbs__item">
@@ -62,8 +62,8 @@ function AddReviewPage({ films }: AddReviewPageProps): JSX.Element {
         <div className="film-card__poster film-card__poster--small">
           <img
             className="film-card__poster--image-item"
-            src={currentFilm.srcPoster}
-            alt={`${currentFilm.title} poster`}
+            src={currentFilm.previewImage}
+            alt={`${currentFilm.name} poster`}
           />
         </div>
       </div>

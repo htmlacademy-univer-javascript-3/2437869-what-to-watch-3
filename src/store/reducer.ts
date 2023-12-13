@@ -1,12 +1,22 @@
 import {createReducer} from '@reduxjs/toolkit';
 import {Genres} from '../mocks/genresInfo.ts';
-import {films} from '../mocks/films.ts';
-import {changeGenre, getGenreFilms, setCardsCount} from './actions.ts';
+import {changeGenre, loadFilms, setCardsCount} from './actions.ts';
+import {FilmCardProps} from '../components/FilmCard/filmCardProps.tsx';
 
-export const initialState = {
+type InitialState = {
+  genre: Genres;
+  films: FilmCardProps[];
+  filteredFilms: FilmCardProps[];
+  cardsCount: number;
+  dataIsLoading: boolean;
+};
+
+export const initialState: InitialState = {
   genre: Genres.All,
-  films: films,
+  films: [],
+  filteredFilms: [],
   cardsCount: 8,
+  dataIsLoading: false,
 };
 
 const reducer = createReducer(initialState, (builder) => {
@@ -14,19 +24,14 @@ const reducer = createReducer(initialState, (builder) => {
     .addCase(changeGenre, (state, action) => {
       state.genre = action.payload;
     })
-    .addCase(getGenreFilms, (state) => {
-      switch (state.genre) {
-        case Genres.All:
-          state.films = films;
-          break;
-        default:
-          state.films = films.filter((film) => film.genre === state.genre);
-          break;
-      }
-    })
     .addCase(setCardsCount, (state) => {
       const currentFilmsCount = state.films.length;
       state.cardsCount = (state.cardsCount + 8 > currentFilmsCount) ? currentFilmsCount : state.cardsCount + 8;
+    })
+    .addCase(loadFilms, (state, action) => {
+      state.films = action.payload;
+      // state.filteredFilms = action.payload;
+      // state.cardsCount = Math.min(state.films.length, 8);
     });
 });
 

@@ -2,15 +2,15 @@ import {Genres} from '../../mocks/genresInfo.ts';
 
 export type FilmCardProps = {
   id: number;
-  title: string;
+  name: string;
   genre: Genres;
   released: number;
-  srcPoster: string;
+  previewImage: string;
   rating: number;
   description: string;
   director: string;
   starring: string[];
-  bgImage: string;
+  backgroundImage: string;
   runTime: string;
-  srcPreviewVideo: string;
+  previewVideoLink: string;
 }
