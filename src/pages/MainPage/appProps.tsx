@@ -1,5 +1,5 @@
 import {PlayerProps} from '../Player/player.tsx';
-import {Review} from '../../components/Tabs/Reviews/reviewProps.ts';
+import {Review} from '../../const.ts';
 
 
 export type AppProps = {

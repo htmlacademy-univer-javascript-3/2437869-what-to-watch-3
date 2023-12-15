@@ -2,7 +2,7 @@ import {createAction} from '@reduxjs/toolkit';
 import {Genres} from '../mocks/genresInfo.ts';
 import {FilmCardProps} from '../components/FilmCard/filmCardProps.tsx';
 import {AppRoute, AuthorizationStatus} from '../components/App/const.ts';
-import {UserData} from '../const.ts';
+import {Review, UserData} from '../const.ts';
 
 
 export const changeGenre = createAction('main/changeGenre',
@@ -24,3 +24,9 @@ export const saveUser = createAction<UserData>('user/saveUser');
 
 
 export const redirectToRoute = createAction<AppRoute>('main/redirectToRoute');
+
+export const loadFilm = createAction<FilmCardProps>('film/loadFilm');
+
+export const loadReviews = createAction<Review[]>('film/loadReviews');
+
+export const loadSimilarFilms = createAction<FilmCardProps[]>('film/loadSimilar');

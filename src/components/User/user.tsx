@@ -4,7 +4,8 @@ import {AuthorizationStatus} from '../App/const.ts';
 import {logOut} from '../../store/api-actions.ts';
 
 function User(): JSX.Element {
-  const { userData, authorizationStatus } = useAppSelector((state) => state);
+  const userData = useAppSelector((state) => state.userData);
+  const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
   const dispatch = useAppDispatch();
 
   const signOutClickHandler = (e: React.MouseEvent<HTMLAnchorElement>) => {

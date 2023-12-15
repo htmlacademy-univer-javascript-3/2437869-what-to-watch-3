@@ -2,21 +2,18 @@ import { useState } from 'react';
 import Overview from './Overview/overview.tsx';
 import Details from './Details/details.tsx';
 import Reviews from './Reviews/reviews.tsx';
-import {FilmCardProps} from '../FilmCard/filmCardProps.tsx';
-import {reviewsList} from '../../mocks/reviewsList.ts';
+import {useAppSelector} from '../../hooks';
 
-type FilmTabsProps = {
-  films: FilmCardProps[];
-}
 
-function FilmTabs(props: FilmTabsProps) {
+function FilmTabs() {
   const [tab, setTab] = useState('Overview');
+  const reviewsList = useAppSelector((state) => state.reviews);
   const getTab = (tabFilm: string) => {
     if (tabFilm === 'Overview') {
-      return <Overview films={props.films} />;
+      return <Overview />;
     }
     if (tabFilm === 'Details') {
-      return <Details films={props.films} />;
+      return <Details />;
     }
     if (tabFilm === 'Reviews') {
       return <Reviews reviews={reviewsList} />;

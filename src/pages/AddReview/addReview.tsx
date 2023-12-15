@@ -1,22 +1,17 @@
-import { Helmet } from 'react-helmet-async';
-
-import Logo from '../../components/Logo/logo.tsx';
-import {FilmCardProps} from '../../components/FilmCard/filmCardProps.tsx';
-import {Link, useParams} from 'react-router-dom';
+import {useAppSelector} from '../../hooks';
+import {Helmet} from 'react-helmet-async';
+import {Link} from 'react-router-dom';
+import User from '../../components/User/user.tsx';
 import AddReviewForm from '../../components/AddReviewForm/addReviewForm.tsx';
 import NotFoundScreen from '../NotFound/notFoundScreen.tsx';
+import Logo from '../../components/Logo/logo.tsx';
 
-export type AddReviewPageProps = {
-  films: FilmCardProps[];
-}
-
-function AddReviewPage({ films }: AddReviewPageProps): JSX.Element {
-  const { id } = useParams();
-  const currentFilmId = Number(id);
-  const currentFilm = films.at(currentFilmId);
-  if (!id || currentFilm === undefined) {
-    return <NotFoundScreen />;
+function AddReviewPage(): JSX.Element {
+  const currentFilm = useAppSelector((state) => state.film);
+  if (!currentFilm){
+    return (<NotFoundScreen />);
   }
+
   return (
     <section className="film-card film-card--full">
       <Helmet>
@@ -44,25 +39,12 @@ function AddReviewPage({ films }: AddReviewPageProps): JSX.Element {
               </li>
             </ul>
           </nav>
-          <ul className="user-block">
-            <li className="user-block__item">
-              <div className="user-block__avatar">
-                <img
-                  className="user-block__image-item"
-                  src="img/avatar.jpg"
-                  alt="User avatar"
-                />
-              </div>
-            </li>
-            <li className="user-block__item">
-              <a className="user-block__link">Sign out</a>
-            </li>
-          </ul>
+          <User />
         </header>
         <div className="film-card__poster film-card__poster--small">
           <img
             className="film-card__poster--image-item"
-            src={currentFilm.previewImage}
+            src={currentFilm.posterImage}
             alt={`${currentFilm.name} poster`}
           />
         </div>
