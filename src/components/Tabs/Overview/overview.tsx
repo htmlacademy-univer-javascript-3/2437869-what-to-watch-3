@@ -1,14 +1,9 @@
-import {useParams} from 'react-router-dom';
-import {FilmCardProps} from '../../FilmCard/filmCardProps.tsx';
+import React from 'react';
+import {useAppSelector} from '../../../hooks';
 
-type OverviewProps = {
-  films: FilmCardProps[];
-}
 
-function Overview({films}: OverviewProps): JSX.Element {
-  const {id} = useParams();
-  const currentFilmId = Number(id);
-  const currentFilm = films.at(currentFilmId);
+function Overview(): JSX.Element {
+  const currentFilm = useAppSelector((state) => state.film);
 
   return (
     <>
@@ -16,7 +11,7 @@ function Overview({films}: OverviewProps): JSX.Element {
         <div className="film-rating__score">{currentFilm?.rating}</div>
         <p className="film-rating__meta">
           <span className="film-rating__level">Very good</span>
-          <span className="film-rating__count">240 ratings</span>
+          <span className="film-rating__count">{`${currentFilm?.scoresCount} ratings`}</span>
         </p>
       </div>
       <div className="film-card__text">
@@ -26,7 +21,11 @@ function Overview({films}: OverviewProps): JSX.Element {
         </p>
         <p className="film-card__starring">
           <strong>
-            Starring: {currentFilm?.starring}
+            Starring: {currentFilm?.starring.map((actor) => (
+              currentFilm?.starring[currentFilm?.starring.length - 1] === actor ?
+                <React.Fragment key={actor}>{actor} and other</React.Fragment> :
+                <React.Fragment key={actor}>{actor}, </React.Fragment>
+            ))}
           </strong>
         </p>
       </div>

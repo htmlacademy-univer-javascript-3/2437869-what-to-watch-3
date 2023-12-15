@@ -1,5 +1,6 @@
 import ReviewBlock from './reviewBlock.tsx';
-import {Review} from './reviewProps.ts';
+import {Review} from '../../../const.ts';
+
 type ReviewsProps = {
   reviews: Review[];
 }
