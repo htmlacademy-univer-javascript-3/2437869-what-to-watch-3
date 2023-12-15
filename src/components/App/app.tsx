@@ -1,8 +1,6 @@
 import Main from '../../pages/MainPage/mainPage.tsx';
-import {Route, BrowserRouter, Routes} from 'react-router-dom';
-import {AppRoute, AuthorizationStatus} from './const.ts';
+import {Route, Routes} from 'react-router-dom';
 import {HelmetProvider} from 'react-helmet-async';
-import {AppProps} from '../../pages/MainPage/appProps.tsx';
 import MyList from '../../pages/MyList/myList.tsx';
 import FilmPage from '../../pages/Film/filmPage.tsx';
 import SignIn from '../../pages/SignIn/signIn.tsx';
@@ -12,8 +10,11 @@ import NotFoundScreen from '../../pages/NotFound/notFoundScreen.tsx';
 import PrivateRoute from '../PrivateRoute/privateRoute.tsx';
 import {useAppSelector} from '../../hooks';
 import Spinner from '../Spinner/spinner.tsx';
+import {AppRoute} from './const.ts';
+import HistoryRouter from '../HistoryRoute/historyRoute.tsx';
+import browserHistory from '../../browserHistory.ts';
 
-function App(props: AppProps) {
+function App() {
   const films = useAppSelector((state)=> state.filteredFilms);
   const isLoading = useAppSelector((state) => state.dataIsLoading);
   if (isLoading) {
@@ -21,7 +22,7 @@ function App(props: AppProps) {
   }
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <HistoryRouter history={browserHistory}>
         <Routes>
           <Route
             path={AppRoute.Main}
@@ -30,16 +31,14 @@ function App(props: AppProps) {
           <Route
             path={AppRoute.MyList}
             element={
-              <PrivateRoute
-                authorizationStatus={AuthorizationStatus.Auth}
-              >
-                <MyList {...props} films={films}/>
+              <PrivateRoute>
+                <MyList films={films}/>
               </PrivateRoute>
             }
           />
           <Route
             path={AppRoute.Film}
-            element={<FilmPage {...props} films={films}/>}
+            element={<FilmPage films={films}/>}
           />
           <Route
             path={AppRoute.SignIn}
@@ -47,18 +46,18 @@ function App(props: AppProps) {
           />
           <Route
             path={AppRoute.AddReview}
-            element={<AddReview {...props} films={films}/>}
+            element={<AddReview films={films}/>}
           />
           <Route
             path={AppRoute.Player}
-            element={<Player {...props.player}/>}
+            element={<Player video={''} poster={''}/>}
           />
           <Route
             path={'*'}
             element={<NotFoundScreen/>}
           />
         </Routes>
-      </BrowserRouter>
+      </HistoryRouter>
     </HelmetProvider>
   );
 }

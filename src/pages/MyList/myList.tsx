@@ -3,23 +3,39 @@ import Logo from '../../components/Logo/logo';
 import FilmCard from '../../components/FilmCard/filmCard.tsx';
 import {MAXDISPLAYEDFILMS} from '../../components/App/const.ts';
 import {FilmCardListProps} from '../../components/FilmList/filmList.tsx';
+import {Link} from 'react-router-dom';
+import {logOut} from '../../store/api-actions.ts';
+import {useAppDispatch} from '../../hooks';
 
 
-function MyList({ films }: FilmCardListProps){
+function MyList({films}: FilmCardListProps) {
+  const dispatch = useAppDispatch();
   return (
     <div className="user-page">
       <header className="page-header user-page__head">
-        <Logo />
+        <Logo/>
 
-        <h1 className="page-title user-page__title">My list <span className="user-page__film-count">{MAXDISPLAYEDFILMS}</span></h1>
+        <h1 className="page-title user-page__title">My list
+          <span className="user-page__film-count">{MAXDISPLAYEDFILMS}
+          </span>
+        </h1>
         <ul className="user-block">
           <li className="user-block__item">
             <div className="user-block__avatar">
-              <img src="img/avatar.jpg" alt="User avatar" width="63" height="63" />
+              <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
             </div>
           </li>
           <li className="user-block__item">
-            <a className="user-block__link">Sign out</a>
+            <Link
+              className="user-block__link"
+              onClick={(evt) => {
+                evt.preventDefault();
+                dispatch(logOut());
+              }}
+              to="/"
+            >
+              Sign out
+            </Link>
           </li>
         </ul>
       </header>
@@ -32,7 +48,7 @@ function MyList({ films }: FilmCardListProps){
         </div>
       </section>
 
-      <Footer />
+      <Footer/>
     </div>
   );
 }
