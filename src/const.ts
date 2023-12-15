@@ -42,6 +42,7 @@ export type UserReview = {
 }
 
 export const TIMEOUT_SHOW_ERROR = 2000;
+export const TIMEOUT_SHOW_ERROR_SMALL = 1000;
 
 export enum Reducer {
   USER_REDUCER = 'USER_REDUCER',
