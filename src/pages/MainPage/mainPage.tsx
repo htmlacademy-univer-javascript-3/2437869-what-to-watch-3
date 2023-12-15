@@ -9,6 +9,7 @@ import Spinner from '../../components/Spinner/spinner.tsx';
 import {store} from '../../store';
 import {fetchFilmsAction} from '../../store/api-actions.ts';
 import {useEffect} from 'react';
+import User from '../../components/User/user.tsx';
 
 function Main(): JSX.Element {
   useEffect(() => {
@@ -26,7 +27,7 @@ function Main(): JSX.Element {
     <>
       <section className="film-card">
         <div className="film-card__bg">
-          <img src="img/bg-the-grand-budapest-hotel.jpg" alt="props.title"/>
+          <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -34,16 +35,7 @@ function Main(): JSX.Element {
         <header className="page-header film-card__head">
           <Logo/>
 
-          <ul className="user-block">
-            <li className="user-block__item">
-              <div className="user-block__avatar">
-                <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-              </div>
-            </li>
-            <li className="user-block__item">
-              <a className="user-block__link">Sign out</a>
-            </li>
-          </ul>
+          <User />
         </header>
 
         <div className="film-card__wrap">
