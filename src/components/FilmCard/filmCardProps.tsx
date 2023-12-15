@@ -1,6 +1,7 @@
 import {Genres} from '../../mocks/genresInfo.ts';
 
 export type FilmCardProps = {
+  previewVideoLink: string;
   id: string;
   name: string;
   genre: Genres;
