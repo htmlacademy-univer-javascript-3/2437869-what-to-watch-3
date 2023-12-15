@@ -1,3 +1,6 @@
+import {FilmCardProps} from './components/FilmCard/filmCardProps.tsx';
+import {AuthorizationStatus} from './components/App/const.ts';
+
 export enum APIRoute {
   Films = '/films',
   Login = '/login',
@@ -39,3 +42,21 @@ export type UserReview = {
 }
 
 export const TIMEOUT_SHOW_ERROR = 2000;
+
+export enum Reducer {
+  USER_REDUCER = 'USER_REDUCER',
+  MAIN_REDUCER = 'MAIN_REDUCER',
+  FILM_REDUCER = 'FILM_REDUCER',
+}
+
+
+export type UserState = {
+  authorizationStatus: AuthorizationStatus;
+  avatar: string | null;
+}
+
+export type FilmState = {
+  film: FilmCardProps | null;
+  reviews: Review[];
+  similarFilms: FilmCardProps[];
+}
